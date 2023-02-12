@@ -2,18 +2,19 @@ import math
 #range roller is basic output control
 def range_roller(N,K):
     if K==0:
-        for i in range(N,2*N+2,3):
-            return i
+        for i in range(N,(2*N)+2,3):
+            lis[i] = i
+        return lis
     elif K==1:
         for i in range(N,0,-2):
-            return i
+            lis[i] = i
+        return lis
     else:
         i = -1
         return i
 #while_it takes in no parameters and returns a list like 105,98,91,...7
 def while_it():
     n = 105
-    a = []
     i = 0
     while n>=7:
         a[i] = n
@@ -73,7 +74,8 @@ def main():
     N = int(input("Enter N for range roller:"))
     K = int(input("Enter K for range roller:"))
     print(range_roller(N,K))
-    print(while_it)
+    w = while_it()
+    print(w)
     n = int(input("Enter N for num sum:"))
     print(num_sum(n))
     A = int(input("Enter integer A for greatest integer function:"))
