@@ -12,6 +12,12 @@ def range_roller(N,K):
             a.append(i)
             a.reverse()
             return a
+            lis[i] = i
+        return lis
+    elif K==1:
+        for i in range(N,0,-2):
+            lis[i] = i
+        return lis
     else:
         i = -1
         return i
@@ -19,6 +25,7 @@ def range_roller(N,K):
 def while_it():
     n = 105
     a = []
+    i = 0
     while n>=7:
         a.append(n)
         n-=7
@@ -76,7 +83,8 @@ def main():
     N = int(input("Enter N for range roller:"))
     K = int(input("Enter K for range roller:"))
     print(range_roller(N,K))
-    print(while_it)
+    w = while_it()
+    print(w)
     n = int(input("Enter N for num sum:"))
     print(num_sum(n))
     A = int(input("Enter integer A for greatest integer function:"))
