@@ -3,6 +3,15 @@ import math
 def range_roller(N,K):
     if K==0:
         for i in range(N,(2*N)+2,3):
+            a = []
+            a.append(i)
+            return a
+    elif K==1:
+        for i in range(0,N+1,2):
+            a = []
+            a.append(i)
+            a.reverse()
+            return a
             lis[i] = i
         return lis
     elif K==1:
@@ -15,11 +24,11 @@ def range_roller(N,K):
 #while_it takes in no parameters and returns a list like 105,98,91,...7
 def while_it():
     n = 105
+    a = []
     i = 0
     while n>=7:
-        a[i] = n
-        i+=1
-        n=n-7
+        a.append(n)
+        n-=7
     return a
 def num_sum(N):
     s=0
@@ -35,27 +44,27 @@ def greatest_integer(A,B,C):
     a = [None]*2
     if A>B:
         if A>C:
-            a[0]=A
+            a.append(A)
             if B>C:
-                a[1]=C
+                a.append(C)
                 
             if B<C:
-                a[1]=B
+                a.append(B)
                 
         if C>A:
-            a[0]=C
-            a[1]=B
+            a.append(C)
+            a.append(B)
 
     elif B>A:
         if B>C:
-            a[0]=B
+            a.append(B)
             if A>C:
-                a[1]=C
+                a.append(C)
             if C>A:
-                a[1]=A
+                a.append(A)
         if C>B:
-            a[0]=C
-            a[1]=A
+            a.append(C)
+            a.append(A)
     return a
 #square_pair creates a combined list
 def square_pair(L1,L2):
