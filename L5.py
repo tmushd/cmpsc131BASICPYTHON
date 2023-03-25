@@ -6,24 +6,24 @@ Filename:L5new.py
 Purpose:assignment
 '''
 
-def avg_row(lst):
-    for i in range(len(lst)):
+def avg_row(l1):
+    for i in range(len(l1)):
         a=0
-        for j in range(len(lst[i])):
-            a+=lst[i][j]
-        avg=a/len(lst[i])
-        lst[i]+=[avg]
-    return lst
+        for j in range(len(l1[i])):
+            a+=l1[i][j]
+        avg=a/len(l1[i])
+        l1[i]+=[avg]
+    return l1
 
-def add_col(lst):
-    lst1=[0]*len(lst[0]) 
-    for row in range(len(lst)):
-        for col in range(len(lst[0])):
-            lst1[col]+=lst[row][col]
+def add_col(l2):
+    lst=[0]*len(l2[0]) 
+    for r in range(len(l2)):
+        for c in range(len(l2[0])):
+            lst[col]+=l2[r][c]
         
-    return lst1
-def read_datafile(fpath):
-    f= open(fpath,'r')
+    return lst
+def read_datafile(filepath):
+    f= open(filepath,'r')
     a=f.readline()
     a=f.readline()
     result=[]
@@ -35,15 +35,15 @@ def read_datafile(fpath):
         result+=[l]
         a=f.readline()
     return result
-def avg_col(lst):
-    lst1=[0]*len(lst[0]) 
-    for row in range(len(lst)):
-        for col in range(len(lst[0])):
-            lst1[col]+=lst[row][col]
-    for i in range(len(lst1)):
-        lst1[i] = lst1[i] / len(lst)
-    lst+=[lst1]
-    return lst
+def avg_col(l3):
+    a=[0]*len(l3[0]) 
+    for r in range(len(l3)):
+        for c in range(len(l3[0])):
+            a[col]+=l3[r][c]
+    for i in range(len(a)):
+        a[i] = a[i] / len(l3)
+    l3+=[a]
+    return l3
 
 
     
