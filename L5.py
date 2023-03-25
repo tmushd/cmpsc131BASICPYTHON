@@ -1,93 +1,62 @@
-#This is the entire program for your L5.py
-def avg_row(l1):
-  numrows = len(l1)
-  numcolumns = len(l1[0])
-  s = 0
-  for i in range(numrows):
-    for j in range(numcolumns):
-      s+=l1[i][j]
-    l1[i].append(s/numcolumns)
-return l1
-#end of function 1 test in your debugger and GPT
-#IMPORTANT: Remove comment after tests.
+'''
+Full Name:Vayunandanreddy Pannala
+ID:9076422586
+Date:23/03/2023
+Filename:L5new.py
+Purpose:assignment
+'''
 
-def add_col(l2):
-  numrows = len(l2)
-  numcolumns = len(l2[0])
-  l_2,s = [],0
-  for i in range(numcolumns):
-    for j in range(numrows):
-      s+=l2[i][j]
-    l_2.append(s)
-return l_2
-#end of function 2 test in your debugger and GPT
-#IMPORTANT: Remove comment after tests.
+def avg_row(lst):
+    for i in range(len(lst)):
+        a=0
+        for j in range(len(lst[i])):
+            a+=lst[i][j]
+        avg=a/len(lst[i])
+        lst[i]+=[avg]
+    return lst
 
-def read_datafile(pathname):
-    '''
-    Accepts a pathname as an argument and returns a 2D list of floating point numbers.
-    Assumes the first row contains header information and all subsequent rows contain whitespace separated floating point numbers.
-    '''
-    #DELETE THE ABOVE IN '''... '''
-    with open(pathname, 'r') as file:
-        # Read the header row and ignore it
-        file.readline()
-        # Initialize an empty list to store the data
-        data = []
-        # Loop over each subsequent line and append a list of floating point numbers to the data list
-        for line in file:
-            data.append([float(num) for num in line.split()])
-        # Return the data as a 2D list
-        return data
-#End of function 3, I am a little unsure about this since I couldn't test this myself.
-#I will prettify in main()
+def add_col(lst):
+    lst1=[0]*len(lst[0]) 
+    for row in range(len(lst)):
+        for col in range(len(lst[0])):
+            lst1[col]+=lst[row][col]
+        
+    return lst1
+def read_datafile(fpath):
+    f= open(fpath,'r')
+    a=f.readline()
+    a=f.readline()
+    result=[]
+    while a!='':
+        
+        l=a.split()
+        for i in range(len(l)):
+            l[i]=float(l[i])
+        result+=[l]
+        a=f.readline()
+    return result
+def avg_col(lst):
+    lst1=[0]*len(lst[0]) 
+    for row in range(len(lst)):
+        for col in range(len(lst[0])):
+            lst1[col]+=lst[row][col]
+    for i in range(len(lst1)):
+        lst1[i] = lst1[i] / len(lst)
+    lst+=[lst1]
+    return lst
 
-def avg_col(l4):
-  numrows = len(l4)
-  numcolumns = len(l4[0])
-  l_4,s = [],0
-  for i in range(numcolumns):
-    for j in range(numrows):
-      s+=l3[i][j]
-    l_4.append(s)
-l4.append(l_4)
-return l4
-#End of function 4.
 
+    
+    
 def main():
-  m1 = int(input('For function avg_rows() number of rows, m = '))
-  n1 = int(input('For function avg_rows() number of columns, n = '))
-  l1 = [[0 for j in range(n)] for i in range(m)]
-  #I feel this is a nice way of taking input, you can modify if you like
-  out1 = avg_rows(l1)
-  print("The solution of avg_rows is: ", out1)
-  
-  #taking input of function 2
-  m2 = int(input('For function add_col() number of rows, m = '))
-  n2 = int(input('For function add_col() number of columns, n = '))
-  l2 = [[0 for j in range(n)] for i in range(m)]
-  #I feel this is a nice way of taking input, you can modify if you like
-  out2 = add_col(l2)
-  print("The solution of add_col is: ", out2)
-  
-  #taking input of function 3
-  #BE CAREFUL with this
-  localPathname = ""#paste your local pathname here
-  print("The solution of read_datafile is: ",read_datafile(localPathname))
-  
-  #taking input of function 4
-  m = int(input('For function avg_col() number of rows, m = '))
-  n = int(input('For function avg_col() number of columns, n = '))
-  l4 = [[0 for j in range(n)] for i in range(m)]
-  #I feel this is a nice way of taking input, you can modify if you like
-  out4 = avg_col(l4)
-  print("The solution of avg_col is: ", out4)
-main()
-  
-  
-  
-  
-      
+    print(avg_row([[1, 2, 3],[4, 5, 9],[1, 8, 9]]))
+    print(add_col([[2, 2, 3],[4, 1, 9],[1, 1, 9]]))
+    print(read_datafile("C:\Users\reddy\Downloads\L5 assignmentnew.txt"))
+    print(avg_col(([ [1, 2, 3],[4, 5, 9],[1, 8, 9] ])))
+    
+if __name__ == '__main__':
+    main()
+
   
     
   
