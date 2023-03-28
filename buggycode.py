@@ -1,5 +1,5 @@
 import math as m
-
+#fix the code without running it and explain why the bugs are bugs.
 def calc_Area():
     m = input("Enter 1 for rectangle, 2 for square, 3 for circle, 4 for triangle")
     if m==1:
