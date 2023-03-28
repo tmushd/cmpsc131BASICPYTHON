@@ -18,6 +18,5 @@ def calc_Area():
         area = 0.5*b*h
     return area
 def main():
-    area = 0
     print(calc_Area())
 main()
