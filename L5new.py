@@ -1,7 +1,7 @@
-Full Name:mayank futnani arupula
-ID:951593459
+Full Name: Vayunandanreddy Pannala
+ID:907642586
 Date:23/03/2023
-Filename:L2_arupula_mayank_mxa6067.py
+Filename:L5new.py
 Purpose:assignment
 '''
 
