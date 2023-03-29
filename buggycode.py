@@ -13,7 +13,7 @@ def calc_Area():
         r = input("Enter the radius of the circle")
         area = m.pi*r*r
     elif m==4:
-        b = input("Enter the base lenght for the triangle")
+        b = input("Enter the base length for the triangle")
         h = input("Enter the height of the triangle")
         area = 0.5*b*h
     return area
