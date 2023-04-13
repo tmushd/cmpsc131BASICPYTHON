@@ -16,7 +16,7 @@ def valley(N):
     c=0
     c+=1
     print(N)
-    if cp>N:
+    if c>N:
         for i in range(1,cp): # I used easy logic so that it makes sense to you. Delete this comment.
             print(i)
 
