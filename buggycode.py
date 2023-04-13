@@ -15,6 +15,7 @@ def calc_Area():
         b = int(input("Enter the base length for the triangle"))
         h = int(input("Enter the height of the triangle"))
         area = 0.5*b*h
+        #bugs are fixed now.
     return area
 def main():
     print(calc_Area())
