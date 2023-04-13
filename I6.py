@@ -29,13 +29,13 @@ def list_sum(list1,length):
     s+=list1[length-1]
     list_sum(list1,length-1)
     
-def digit_sum(N):
-    s=0
-    if N%10==0:
+def digit_sum(N,s):
+    if (N%10)==0:
         print(s)
-        return
+        return 
     s += (N%10)
-    digit_sum(N//10)
+    print(s)
+    digit_sum(N//10,s)
     
 #Figure out why list_sum and digit_sum are not working. Delete this comment.
 
@@ -51,7 +51,7 @@ def main():
     
     list_sum(list1,length)
     n = int(input("Enter n for digit_sum(): "))
-    digit_sum(19)
+    digit_sum(n,0)
     #I created main to test the functions
 main()
 
