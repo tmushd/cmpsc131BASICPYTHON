@@ -11,9 +11,9 @@ def cleanse(box):
             strcmp += lst
             for val in lst.strip().split():
                 if val.isdigit():#check for integers
-                    row.append(int(val))
+                    row += int(val)
                 else:
-                    row.append(str(val))
+                    row += str(val)
             clientList+=[row]
         lst=contents.readline()#reads next line where control ended.
     return clientList
@@ -28,9 +28,9 @@ def color_count(li):
                 a[j], a[j+1] = a[j+1], a[j]
                 #bubble sorting just in case the sorted list is required later.
     maximum_balls = a[0][0]
-    ret.append(maximum_balls)
+    ret += maximum_balls
     minimum_balls = a[n-1][0]
-    ret.append(minimum_balls)
+    ret += minimum_balls
     return ret
     
 def main():
