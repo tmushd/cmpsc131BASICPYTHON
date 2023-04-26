@@ -1,3 +1,4 @@
+import math
 '''
 Name- mayank futnani arupula
 ID-mxa6067@psu.edu
@@ -7,8 +8,7 @@ ID-mxa6067@psu.edu
 
 '''
 
-#m = "/Users/mayankarupula/Downloads/box-1.txt"
-m = "/home/box-1.txt"
+m = "/Users/mayankarupula/Downloads/box-1.txt"
 def cleanse(m):
     L2=[]
     L3=[]
@@ -61,18 +61,70 @@ def color_count(k):
 
 def color_deviation(cleanse(m)):
     li = cleanse(m)
-    avg = []
+    s1 = 0.0#sum to calculate mean
+    s2 = 0.0#sum to calculate (xi - mean)^2
+    avg = 0.0#stores mean
+    a = []#client list
     S = 0.0#S = population standard deviation
-    for i in range(1,len(li[i])):
-        s+=li[i]
-    avg = s/
-        
+    for i in range(len(li)):
+        for j in range(1, len(li[i]))
+            s1+=li[i][j]
+        avg = s1/len(li[i])
+        for k in range(1, len(li[i]))
+            s2 += (li[i][j]-avg)**2
+        S = math.sqrt(s2/len(li[i]))
+        a+=S
+    return a
+#end of third function
+
+def rainbow_check(cleanse(m)):
+    li = cleanse(m)
+    r = -6
+    a=[]
+    for i in range(len(li))
+        if li[i] == 'Violet':
+            r+=1
+            a+=i
+        if li[i] == 'Indigo':
+            r+=1
+            a+=i
+        if li[i] == 'Blue':
+            r+=1
+            a+=i
+        if li[i] == 'Green':
+            r+=1
+            a+=i
+        if li[i] == 'Yellow':
+            r+=1
+            a+=i
+        if li[i] == 'Orange':
+            r+=1
+            a+=i
+        if li[i] == 'Red':
+            r+=1
+            a+=i
+    if r==1:
+        return 1,a
+    else:
+        return a
+#end of fourth function        
+
+def happy_kids(cleanse(m)):
+    x = input("Enter the value of x: ")
+    li = cleanse(m)
+    c = 0
+    for i in range(len(li)):
+        if x == li[i]:
+            c+=1
+    return c
+#end of fifth function
     
-    return S
     
 def main():
     print(cleanse(m))
+    a = cleanse(m)
     print(color_count(a))
-
-#main for testing
+    print(color_deviation(a))
+    print(rainbow_check(a))
+    print(happy_kids(a))
 main()
